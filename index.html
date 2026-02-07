@@ -1,63 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Happy Rose Day Rohini 🌹</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
-      font-family: 'Georgia', serif;
-      text-align: center;
-      padding: 40px;
-      color: #7a0026;
-    }
-    h1 {
-      font-size: 36px;
-    }
-    .rose {
-      font-size: 60px;
-      margin: 20px 0;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      max-width: 600px;
-      margin: auto;
-    }
-    p {
-      font-size: 20px;
-      line-height: 1.6;
-    }
-    .love {
-      font-size: 24px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Happy Rose Day Rohini 🌹</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+  overflow: hidden;
+  text-align: center;
+  color: #7a0026;
+}
+
+.card {
+  background: white;
+  margin: 80px auto;
+  padding: 35px;
+  max-width: 600px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+.rose {
+  font-size: 55px;
+  margin: 15px 0;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.love {
+  font-size: 24px;
+  margin-top: 25px;
+  font-weight: bold;
+  color: #e6005c;
+}
+
+/* Falling Roses */
+.rose-fall {
+  position: fixed;
+  top: -50px;
+  font-size: 30px;
+  animation: fall linear infinite;
+  z-index: 1;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* Hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 25px;
+  animation: float 6s linear infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh);
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>Happy Rose Day Rohini 🌹</h1>
-    <div class="rose">🌹🌹🌹</div>
+<!-- Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
-    <p>
-      Like a rose, you fill my life with color,<br>
-      With love so pure and a smile so bright.<br>
-      Every heartbeat whispers your name,<br>
-      Every moment feels right when you’re near.
-    </p>
+<div class="card">
 
-    <p>
-      You are not just my love,<br>
-      You are my peace, my happiness, my forever.
-    </p>
+<h1>Happy Rose Day Rohini 🌹❤️</h1>
 
-    <div class="love">
-      I Love You Always ❤️
-    </div>
-  </div>
+<div class="rose">🌹🌹🌹🌹🌹</div>
+
+<p>
+Like a rose, you fill my life with color,<br>
+With love so pure and a smile so bright.<br>
+Every heartbeat whispers your name,<br>
+Every moment feels right when you're near.
+</p>
+
+<p>
+You are not just my love,<br>
+You are my peace, my happiness, my forever.
+</p>
+
+<div class="love">
+Forever Yours ❤️<br>
+– From Your Love 💌
+</div>
+
+</div>
+
+<script>
+// Falling Roses
+for(let i=0;i<20;i++){
+  let rose = document.createElement("div");
+  rose.innerHTML="🌹";
+  rose.className="rose-fall";
+  rose.style.left=Math.random()*100+"vw";
+  rose.style.animationDuration=5+Math.random()*5+"s";
+  document.body.appendChild(rose);
+}
+
+// Floating Hearts
+for(let i=0;i<20;i++){
+  let heart = document.createElement("div");
+  heart.innerHTML="❤️";
+  heart.className="heart";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=4+Math.random()*4+"s";
+  document.body.appendChild(heart);
+}
+</script>
 
 </body>
 </html>
