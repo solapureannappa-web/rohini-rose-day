@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Rohini ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+  font-family: 'Georgia', serif;
+  text-align: center;
+  color: #6b0030;
+}
+
+.container {
+  max-width: 700px;
+  margin: 80px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+h1 {
+  font-size: 34px;
+}
+
+.heart {
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+  display: none;
+}
+
+button {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+button:hover {
+  background: #e6004c;
+}
+
+.signature {
+  font-size: 22px;
+  margin-top: 25px;
+  font-weight: bold;
+  color: #cc0052;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>For My Beautiful Rohini ❤️</h1>
+
+<div class="heart">💖💖💖</div>
+
+<p id="line1">
+Tomorrow is special…<br>
+Because it reminds me how lucky I am to have you 🌸
+</p>
+
+<p id="line2">
+Every smile of yours is my happiness,<br>
+Every tear of yours is my pain 💕
+</p>
+
+<p id="line3">
+With you, even ordinary days feel magical ✨<br>
+Without you, nothing feels complete.
+</p>
+
+<p id="line4">
+I promise to hold your hand today,<br>
+Tomorrow, and forever 🤝❤️
+</p>
+
+<p id="line5">
+You are my love story,<br>
+My best chapter,<br>
+My forever ending 💌
+</p>
+
+<button onclick="showNext()">Tap to Open My Heart 💝</button>
+
+<div class="signature" id="sign">
+Forever Yours ❤️<br>
+– With All My Love 💖
+</div>
+
+</div>
+
+<script>
+let step = 0;
+
+function showNext() {
+  step++;
+
+  if(step === 1) document.getElementById("line1").style.display = "block";
+  if(step === 2) document.getElementById("line2").style.display = "block";
+  if(step === 3) document.getElementById("line3").style.display = "block";
+  if(step === 4) document.getElementById("line4").style.display = "block";
+  if(step === 5) document.getElementById("line5").style.display = "block";
+  if(step === 6) document.getElementById("sign").style.display = "block";
+}
+</script>
+
+</body>
+</html>
