@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rohini ❤️ My Forever</title>
+
+<style>
+
+/* Background */
+body {
+  margin:0;
+  font-family: 'Georgia', serif;
+  overflow:hidden;
+}
+
+/* Blurred Photo */
+.bg {
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+  filter: blur(8px) brightness(0.7);
+  z-index:-2;
+}
+
+/* Glow Overlay */
+.glow {
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle, rgba(255,0,100,0.25), rgba(0,0,0,0.7));
+  z-index:-1;
+}
+
+/* Main Card */
+.card {
+  background: rgba(255,255,255,0.95);
+  max-width:700px;
+  margin:60px auto;
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 0 40px #ff4d8d;
+  position:relative;
+}
+
+/* Glowing Name */
+.name {
+  font-size:38px;
+  color:#d6004c;
+  text-shadow:0 0 10px #ff5fa2,0 0 20px #ff5fa2;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {opacity:0.7;}
+  to {opacity:1;}
+}
+
+p {
+  font-size:20px;
+  line-height:1.7;
+}
+
+/* Slideshow */
+.slideshow {
+  width:100%;
+  height:250px;
+  border-radius:15px;
+  background-size:cover;
+  background-position:center;
+  margin:15px 0;
+  animation: slide 12s infinite;
+}
+
+@keyframes slide {
+  0% {background-image:url("IMG-20250923-WA0010.jpg");}
+  50% {background-image:url("photo2.jpg");}
+  100% {background-image:url("photo3.jpg");}
+}
+
+/* Buttons */
+button {
+  background:linear-gradient(45deg,#ff2e63,#ff8fab);
+  border:none;
+  padding:12px 25px;
+  color:white;
+  font-size:17px;
+  border-radius:30px;
+  margin:8px;
+  cursor:pointer;
+  box-shadow:0 0 15px #ff2e63;
+}
+
+button:hover {
+  transform:scale(1.05);
+}
+
+/* Hearts */
+.heart {
+  position:fixed;
+  top:-20px;
+  font-size:25px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {transform:translateY(110vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio id="music" loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
+</audio>
+
+<div class="bg"></div>
+<div class="glow"></div>
+
+<div class="card">
+
+<h1 class="name">Rohini ✨❤️</h1>
+
+<div class="slideshow"></div>
+
+<p>
+We never met in real…<br>
+But your voice gives me goosebumps 😍<br>
+02 Oct 2022 — My heart chose you 💖
+</p>
+
+<p>
+You are my dream, my peace, my forever 💍
+</p>
+
+<h2>Will You Be Mine Forever? 💖</h2>
+
+<button onclick="yes()">Yes 😍</button>
+<button onclick="no()">No 🙈</button>
+
+<br>
+
+<button onclick="play()">▶️ Play Music 🎵</button>
+
+</div>
+
+<script>
+
+/* Music */
+function play(){
+ document.getElementById("music").play();
+}
+
+/* Yes Button */
+function yes(){
+ window.location.href=
+ "https://wa.me/?text=Yes%20I%20Love%20You%20Forever%20❤️%20Rohini";
+}
+
+/* No Button */
+function no(){
+ alert("Are you sure? 😢 Please think again ❤️");
+}
+
+/* Heart Rain */
+for(let i=0;i<25;i++){
+ let h=document.createElement("div");
+ h.innerHTML="💗";
+ h.className="heart";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=5+Math.random()*5+"s";
+ document.body.appendChild(h);
+}
+
+</script>
+
+</body>
+</html>
