@@ -2,53 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Rohini ❤️ My Forever</title>
+<title>Rohini ❤️ Shri</title>
 
 <style>
 
-/* Background */
+/* Body */
 body {
   margin:0;
   font-family: 'Georgia', serif;
   overflow:hidden;
 }
 
-/* Blurred Photo */
+/* Blurred Background */
 .bg {
   position:fixed;
-  top:0; left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
-  filter: blur(8px) brightness(0.7);
+  filter: blur(9px) brightness(0.7);
   z-index:-2;
 }
 
-/* Glow Overlay */
+/* Glow */
 .glow {
   position:fixed;
   inset:0;
-  background: radial-gradient(circle, rgba(255,0,100,0.25), rgba(0,0,0,0.7));
+  background: radial-gradient(circle, rgba(255,0,120,0.3), rgba(0,0,0,0.8));
   z-index:-1;
 }
 
-/* Main Card */
+/* Card */
 .card {
-  background: rgba(255,255,255,0.95);
-  max-width:700px;
-  margin:60px auto;
-  padding:35px;
-  border-radius:25px;
+  background: rgba(255,255,255,0.97);
+  max-width:720px;
+  margin:50px auto;
+  padding:40px;
+  border-radius:30px;
   text-align:center;
-  box-shadow:0 0 40px #ff4d8d;
+  box-shadow:0 0 50px #ff4d8d;
   position:relative;
 }
 
-/* Glowing Name */
+/* Names */
 .name {
-  font-size:38px;
+  font-size:40px;
   color:#d6004c;
-  text-shadow:0 0 10px #ff5fa2,0 0 20px #ff5fa2;
+  text-shadow:0 0 12px #ff5fa2,0 0 25px #ff5fa2;
   animation: glow 2s infinite alternate;
 }
 
@@ -57,20 +55,15 @@ body {
   to {opacity:1;}
 }
 
-p {
-  font-size:20px;
-  line-height:1.7;
-}
-
 /* Slideshow */
 .slideshow {
   width:100%;
-  height:250px;
-  border-radius:15px;
+  height:260px;
+  border-radius:18px;
   background-size:cover;
   background-position:center;
-  margin:15px 0;
-  animation: slide 12s infinite;
+  margin:20px 0;
+  animation: slide 15s infinite;
 }
 
 @keyframes slide {
@@ -79,21 +72,37 @@ p {
   100% {background-image:url("photo3.jpg");}
 }
 
+/* Text */
+p {
+  font-size:21px;
+  line-height:1.7;
+  color:#6b0030;
+}
+
 /* Buttons */
 button {
   background:linear-gradient(45deg,#ff2e63,#ff8fab);
   border:none;
-  padding:12px 25px;
+  padding:13px 28px;
   color:white;
-  font-size:17px;
-  border-radius:30px;
-  margin:8px;
+  font-size:18px;
+  border-radius:35px;
+  margin:10px;
   cursor:pointer;
-  box-shadow:0 0 15px #ff2e63;
+  box-shadow:0 0 18px #ff2e63;
 }
 
 button:hover {
-  transform:scale(1.05);
+  transform:scale(1.07);
+}
+
+/* Footer */
+.footer {
+  margin-top:25px;
+  font-size:20px;
+  color:#cc0044;
+  font-weight:bold;
+  text-shadow:0 0 8px pink;
 }
 
 /* Hearts */
@@ -123,18 +132,24 @@ button:hover {
 
 <div class="card">
 
-<h1 class="name">Rohini ✨❤️</h1>
+<h1 class="name">Rohini ✨❤️ Shri</h1>
 
 <div class="slideshow"></div>
 
 <p>
 We never met in real…<br>
 But your voice gives me goosebumps 😍<br>
-02 Oct 2022 — My heart chose you 💖
+02 October 2022 — My heart chose you 💖
 </p>
 
 <p>
-You are my dream, my peace, my forever 💍
+From that day till today,<br>
+Every dream of mine has your name 🌸
+</p>
+
+<p>
+I don’t want a life without you…<br>
+Not today. Not tomorrow. Not ever 💍
 </p>
 
 <h2>Will You Be Mine Forever? 💖</h2>
@@ -145,6 +160,11 @@ You are my dream, my peace, my forever 💍
 <br>
 
 <button onclick="play()">▶️ Play Music 🎵</button>
+
+<div class="footer">
+Forever Yours ❤️<br>
+— Shri 💌
+</div>
 
 </div>
 
@@ -158,21 +178,21 @@ function play(){
 /* Yes Button */
 function yes(){
  window.location.href=
- "https://wa.me/?text=Yes%20I%20Love%20You%20Forever%20❤️%20Rohini";
+ "https://wa.me/?text=Yes%20Shri%20I%20Love%20You%20Forever%20❤️💍";
 }
 
 /* No Button */
 function no(){
- alert("Are you sure? 😢 Please think again ❤️");
+ alert("Please don’t say no 😢 My heart belongs to you ❤️");
 }
 
 /* Heart Rain */
-for(let i=0;i<25;i++){
+for(let i=0;i<30;i++){
  let h=document.createElement("div");
  h.innerHTML="💗";
  h.className="heart";
  h.style.left=Math.random()*100+"vw";
- h.style.animationDuration=5+Math.random()*5+"s";
+ h.style.animationDuration=4+Math.random()*6+"s";
  document.body.appendChild(h);
 }
 
