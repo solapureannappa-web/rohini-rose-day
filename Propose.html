@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rohini ❤️ Shri</title>
+
+<style>
+
+/* Body */
+body{
+  margin:0;
+  font-family: Georgia, serif;
+  overflow:hidden;
+  background:black;
+}
+
+/* Background */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+  filter:blur(2px) brightness(1);
+  z-index:-2;
+}
+
+/* Dark overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  z-index:-1;
+}
+
+/* Card */
+.card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-radius:25px;
+  padding:25px;
+  max-width:90%;
+  margin:40px auto;
+  text-align:center;
+  color:white;
+  box-shadow:0 0 25px rgba(255,0,120,0.7);
+}
+
+/* Title */
+h1{
+  color:#ff4f8b;
+  text-shadow:0 0 15px pink;
+}
+
+/* Text */
+p{
+  line-height:1.6;
+}
+
+/* Buttons */
+.btn{
+  border:none;
+  padding:12px 22px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  margin:8px;
+  color:white;
+}
+
+.yes{
+  background:#ff4081;
+  box-shadow:0 0 15px pink;
+}
+
+.no{
+  background:#666;
+  position:absolute;
+}
+
+/* Heart rain */
+.heart{
+  position:fixed;
+  top:-20px;
+  color:pink;
+  font-size:20px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh);
+    opacity:0;
+  }
+}
+
+/* Fireworks */
+.firework{
+  position:fixed;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:red;
+  animation:boom 1s forwards;
+}
+
+@keyframes boom{
+  to{
+    transform:scale(8);
+    opacity:0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+<source src="https://pagalworld.com.se/files/download/id/7092" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+<h1>💖 Rohini ✨❤️ Shri 💖</h1>
+
+<p>
+We never met in real...<br>
+But every time I hear your voice,<br>
+I get goosebumps 😍❤️
+</p>
+
+<p>
+02 October 2022 —<br>
+The day my heart chose you 💞
+</p>
+
+<p>
+From that day till today,<br>
+Every dream of mine has your name 🌸
+</p>
+
+<p>
+I don’t want a life without you...<br>
+Not today. Not tomorrow. Not ever 💍
+</p>
+
+<h2>Will You Be Mine Forever? 💖</h2>
+
+<button class="btn yes" onclick="accept()">Yes 😍</button>
+<button class="btn no" id="noBtn">No 😅</button>
+
+<p style="margin-top:20px">
+Forever Yours ❤️<br>
+— Shri 💌
+</p>
+
+</div>
+
+<script>
+
+/* Music + WhatsApp + Fireworks */
+function accept(){
+
+document.getElementById("bgMusic").play();
+
+for(let i=0;i<20;i++){
+  let f=document.createElement("div");
+  f.className="firework";
+  f.style.left=Math.random()*100+"%";
+  f.style.top=Math.random()*100+"%";
+  document.body.appendChild(f);
+
+  setTimeout(()=>f.remove(),1000);
+}
+
+setTimeout(()=>{
+window.location.href=
+"https://wa.me/?text=Yes%20Shri%20❤️%20I%20Love%20You%20Forever%20💍";
+},1500);
+
+}
+
+/* No Button Run */
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",()=>{
+  noBtn.style.left=Math.random()*80+"%";
+  noBtn.style.top=Math.random()*80+"%";
+});
+
+/* Heart Rain */
+function createHeart(){
+
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💗";
+
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),7000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
