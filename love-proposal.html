@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rohini ❤️ Shri</title>
+
+<style>
+
+/* Body */
+body{
+  margin:0;
+  font-family:Georgia,serif;
+  overflow:hidden;
+}
+
+/* Background */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+  filter:blur(2px) brightness(0.6);
+  z-index:-3;
+}
+
+/* Slideshow */
+.slideshow{
+  position:fixed;
+  inset:0;
+  z-index:-4;
+}
+
+.slide{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  opacity:0;
+  transition:2s;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+/* Hearts */
+.heart{
+  position:fixed;
+  color:#ff4d88;
+  font-size:20px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  from{transform:translateY(-50px);}
+  to{transform:translateY(110vh);}
+}
+
+/* Center Card */
+.card{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  width:90%;
+  max-width:420px;
+
+  background:rgba(255,255,255,0.22);
+  backdrop-filter:blur(15px);
+
+  padding:25px;
+  border-radius:25px;
+
+  text-align:center;
+  color:white;
+
+  box-shadow:0 0 40px rgba(255,0,120,0.9);
+}
+
+/* Title */
+h1{
+  color:#ff69b4;
+  text-shadow:0 0 15px #ff1493;
+}
+
+/* Buttons */
+button{
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  margin:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.yes{
+  background:#ff4081;
+  color:white;
+}
+
+.no{
+  background:#555;
+  color:white;
+  position:absolute;
+}
+
+/* Footer */
+.footer{
+  margin-top:15px;
+  color:#ffd1dc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="bg"></div>
+
+<!-- Slideshow -->
+<div class="slideshow">
+  <img src="IMG-20250923-WA0010.jpg" class="slide active">
+  <img src="photo1.jpg" class="slide">
+  <img src="photo2.jpg" class="slide">
+</div>
+
+<!-- Main Card -->
+<div class="card">
+
+<h1>💖 Rohini ✨❤️ Shri 💖</h1>
+
+<p>
+We never met in real...<br>
+But every time I hear your voice,<br>
+I get goosebumps 😍❤️
+</p>
+
+<p>
+02 October 2022 —<br>
+The day my heart chose you 💞
+</p>
+
+<p>
+From that day till today,<br>
+Every dream has your name 🌸
+</p>
+
+<p>
+I don’t want a life without you...<br>
+Not today. Not tomorrow. Not ever 💍
+</p>
+
+<h3>Will You Be Mine Forever? 💖</h3>
+
+<button class="yes" onclick="yesClick()">Yes 😍</button>
+<button class="no" id="noBtn">No 😜</button>
+
+<div class="footer">
+Forever Yours ❤️<br>
+— Shri 💌
+</div>
+
+</div>
+
+<!-- Music -->
+<audio id="music" loop>
+  <source src="https://pagalfree.com/musics/128-Tum%20Hi%20Ho%20-%20Aashiqui%202%20128%20Kbps.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* Hearts */
+for(let i=0;i<35;i++){
+  let h=document.createElement("div");
+  h.innerHTML="💗";
+  h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=3+Math.random()*5+"s";
+  document.body.appendChild(h);
+}
+
+/* No button moving */
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+  noBtn.style.left=Math.random()*70+"%";
+  noBtn.style.top=Math.random()*70+"%";
+});
+
+/* Slideshow */
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+setInterval(()=>{
+  slides.forEach(s=>s.classList.remove("active"));
+  index=(index+1)%slides.length;
+  slides[index].classList.add("active");
+},4000);
+
+/* Yes Click */
+function yesClick(){
+
+  document.getElementById("music").play();
+
+  let msg="Yes Shri ❤️ I Love You Forever 💍😘";
+
+  window.open(
+   "https://wa.me/?text="+encodeURIComponent(msg),
+   "_blank"
+  );
+
+  alert("I Love You Rohini ❤️ Forever 💍");
+
+}
+
+</script>
+
+</body>
+</html>
