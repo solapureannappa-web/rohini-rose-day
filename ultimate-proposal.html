@@ -6,115 +6,133 @@
 
 <style>
 
-/* Body */
-body {
-  margin:0;
-  font-family: 'Georgia', serif;
-  overflow:hidden;
+/* Reset */
+body{
+ margin:0;
+ font-family: 'Georgia', serif;
+ overflow:hidden;
+ background:black;
 }
 
 /* Blurred Background */
-.bg {
-  position:fixed;
-  inset:0;
-  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
-  filter: blur(9px) brightness(0.7);
-  z-index:-2;
+.bg{
+ position:fixed;
+ inset:0;
+ background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+ filter:blur(9px) brightness(0.7);
+ z-index:-2;
 }
 
-/* Glow */
-.glow {
-  position:fixed;
-  inset:0;
-  background: radial-gradient(circle, rgba(255,0,120,0.3), rgba(0,0,0,0.8));
-  z-index:-1;
+/* Glow Overlay */
+.glow{
+ position:fixed;
+ inset:0;
+ background:radial-gradient(circle,
+ rgba(255,0,120,0.3),
+ rgba(0,0,0,0.8));
+ z-index:-1;
 }
 
-/* Card */
-.card {
-  background: rgba(255,255,255,0.97);
-  max-width:720px;
-  margin:50px auto;
-  padding:40px;
-  border-radius:30px;
-  text-align:center;
-  box-shadow:0 0 50px #ff4d8d;
-  position:relative;
+/* Main Card */
+.card{
+ background:rgba(255,255,255,0.97);
+ max-width:720px;
+ margin:50px auto;
+ padding:40px;
+ border-radius:30px;
+ text-align:center;
+ box-shadow:0 0 50px #ff4d8d;
+ position:relative;
 }
 
-/* Names */
-.name {
-  font-size:40px;
-  color:#d6004c;
-  text-shadow:0 0 12px #ff5fa2,0 0 25px #ff5fa2;
-  animation: glow 2s infinite alternate;
+/* Glowing Name */
+.name{
+ font-size:40px;
+ color:#d6004c;
+ text-shadow:0 0 12px #ff5fa2,0 0 25px #ff5fa2;
+ animation:glow 2s infinite alternate;
 }
 
-@keyframes glow {
-  from {opacity:0.7;}
-  to {opacity:1;}
+@keyframes glow{
+ from{opacity:0.7;}
+ to{opacity:1;}
 }
 
 /* Slideshow */
-.slideshow {
-  width:100%;
-  height:260px;
-  border-radius:18px;
-  background-size:cover;
-  background-position:center;
-  margin:20px 0;
-  animation: slide 15s infinite;
+.slideshow{
+ width:100%;
+ height:260px;
+ border-radius:18px;
+ background-size:cover;
+ background-position:center;
+ margin:20px 0;
+ animation:slide 15s infinite;
 }
 
-@keyframes slide {
-  0% {background-image:url("IMG-20250923-WA0010.jpg");}
-  50% {background-image:url("photo2.jpg");}
-  100% {background-image:url("photo3.jpg");}
+@keyframes slide{
+ 0%{background-image:url("IMG-20250923-WA0010.jpg");}
+ 50%{background-image:url("photo2.jpg");}
+ 100%{background-image:url("photo3.jpg");}
 }
 
 /* Text */
-p {
-  font-size:21px;
-  line-height:1.7;
-  color:#6b0030;
+p{
+ font-size:21px;
+ line-height:1.7;
+ color:#6b0030;
 }
 
 /* Buttons */
-button {
-  background:linear-gradient(45deg,#ff2e63,#ff8fab);
-  border:none;
-  padding:13px 28px;
-  color:white;
-  font-size:18px;
-  border-radius:35px;
-  margin:10px;
-  cursor:pointer;
-  box-shadow:0 0 18px #ff2e63;
+button{
+ background:linear-gradient(45deg,#ff2e63,#ff8fab);
+ border:none;
+ padding:13px 28px;
+ color:white;
+ font-size:18px;
+ border-radius:35px;
+ margin:10px;
+ cursor:pointer;
+ box-shadow:0 0 18px #ff2e63;
+ transition:0.3s;
 }
 
-button:hover {
-  transform:scale(1.07);
+button:hover{
+ transform:scale(1.07);
 }
 
 /* Footer */
-.footer {
-  margin-top:25px;
-  font-size:20px;
-  color:#cc0044;
-  font-weight:bold;
-  text-shadow:0 0 8px pink;
+.footer{
+ margin-top:25px;
+ font-size:20px;
+ color:#cc0044;
+ font-weight:bold;
+ text-shadow:0 0 8px pink;
 }
 
 /* Hearts */
-.heart {
-  position:fixed;
-  top:-20px;
-  font-size:25px;
-  animation: fall linear infinite;
+.heart{
+ position:fixed;
+ top:-20px;
+ font-size:25px;
+ animation:fall linear infinite;
+ pointer-events:none;
 }
 
-@keyframes fall {
-  to {transform:translateY(110vh);}
+@keyframes fall{
+ to{transform:translateY(110vh);}
+}
+
+/* Fireworks */
+@keyframes boom{
+ from{transform:scale(0);opacity:1;}
+ to{transform:scale(3);opacity:0;}
+}
+
+.fire{
+ position:fixed;
+ font-size:30px;
+ animation:boom 1.5s ease-out;
+ pointer-events:none;
 }
 
 </style>
@@ -124,7 +142,7 @@ button:hover {
 
 <!-- Music -->
 <audio id="music" loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
+ <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
 </audio>
 
 <div class="bg"></div>
@@ -138,8 +156,13 @@ button:hover {
 
 <p>
 We never met in real…<br>
-But your voice gives me goosebumps 😍<br>
-02 October 2022 — My heart chose you 💖
+But every time I hear your voice,<br>
+I get goosebumps 😍❤️
+</p>
+
+<p>
+02 October 2022 —<br>
+The day my heart chose you 💖
 </p>
 
 <p>
@@ -155,7 +178,7 @@ Not today. Not tomorrow. Not ever 💍
 <h2>Will You Be Mine Forever? 💖</h2>
 
 <button onclick="yes()">Yes 😍</button>
-<button onclick="no()">No 🙈</button>
+<button id="noBtn" onmouseover="runAway()">No 🙈</button>
 
 <br>
 
@@ -170,24 +193,52 @@ Forever Yours ❤️<br>
 
 <script>
 
-/* Music */
+/* Play Music */
 function play(){
  document.getElementById("music").play();
 }
 
-/* Yes Button */
+/* YES Button */
 function yes(){
- window.location.href=
- "https://wa.me/?text=Yes%20Shri%20I%20Love%20You%20Forever%20❤️💍";
+
+ // Fireworks
+ for(let i=0;i<40;i++){
+  let f=document.createElement("div");
+  f.innerHTML="🎆";
+  f.className="fire";
+  f.style.left=Math.random()*100+"vw";
+  f.style.top=Math.random()*100+"vh";
+  document.body.appendChild(f);
+
+  setTimeout(()=>f.remove(),1500);
+ }
+
+ // Popup
+ setTimeout(()=>{
+  alert("I Love You So Much Rohini ❤️🥹\nForever Yours — Shri 💖");
+ },800);
+
+ // WhatsApp
+ setTimeout(()=>{
+  window.location.href=
+  "https://wa.me/?text=Yes%20Shri%20I%20Love%20You%20Forever%20❤️💍";
+ },2000);
 }
 
-/* No Button */
-function no(){
- alert("Please don’t say no 😢 My heart belongs to you ❤️");
+/* NO Button Run */
+function runAway(){
+ let btn=document.getElementById("noBtn");
+
+ let x=Math.random()*80-40;
+ let y=Math.random()*80-40;
+
+ btn.style.position="relative";
+ btn.style.left=x+"px";
+ btn.style.top=y+"px";
 }
 
 /* Heart Rain */
-for(let i=0;i<30;i++){
+for(let i=0;i<35;i++){
  let h=document.createElement("div");
  h.innerHTML="💗";
  h.className="heart";
