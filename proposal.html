@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Proposal for Rohini ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=80") no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background: rgba(255,255,255,0.95);
+  color: #7a0033;
+  padding: 40px;
+  border-radius: 25px;
+  max-width: 650px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+h1 {
+  font-size: 34px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+  display: none;
+}
+
+button {
+  background: #e6005c;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+button:hover {
+  background: #b30047;
+}
+
+.final {
+  font-size: 26px;
+  font-weight: bold;
+  display: none;
+  color: #cc0044;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+
+<div class="overlay">
+<div class="box">
+
+<h1>For My Rohini ❤️</h1>
+
+<p id="l1">From the first day I met you… my world changed ✨</p>
+
+<p id="l2">Your smile became my favorite place 💕</p>
+
+<p id="l3">Your voice became my peace 🌸</p>
+
+<p id="l4">Every dream I see… has you in it 💭❤️</p>
+
+<p id="l5">I don’t want a future without you… ever 💍</p>
+
+<p id="l6">So today, with all my heart…</p>
+
+<div class="final" id="final">
+Will You Be Mine Forever? 💖💍
+</div>
+
+<button onclick="next()">Tap to Continue 💌</button>
+
+</div>
+</div>
+
+<script>
+let step = 0;
+const music = document.getElementById("music");
+
+function next() {
+  step++;
+
+  if(step === 1) music.play();
+  if(step === 1) document.getElementById("l1").style.display="block";
+  if(step === 2) document.getElementById("l2").style.display="block";
+  if(step === 3) document.getElementById("l3").style.display="block";
+  if(step === 4) document.getElementById("l4").style.display="block";
+  if(step === 5) document.getElementById("l5").style.display="block";
+  if(step === 6) document.getElementById("l6").style.display="block";
+  if(step === 7) document.getElementById("final").style.display="block";
+}
+</script>
+
+</body>
+</html>
