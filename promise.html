@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Promise to Rohini ❤️</title>
+
+<style>
+
+/* Body */
+body{
+  margin:0;
+  font-family:'Georgia',serif;
+  overflow:hidden;
+  background:black;
+}
+
+/* Background Scene */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=80")
+  center/cover no-repeat;
+  animation:zoom 25s infinite alternate;
+  z-index:-3;
+}
+
+/* Dark Overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:-2;
+}
+
+/* Zoom Effect */
+@keyframes zoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.1);}
+}
+
+/* Hearts */
+.heart{
+  position:fixed;
+  top:-20px;
+  color:#ff5fa2;
+  font-size:22px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
+/* Main Card */
+.card{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  width:90%;
+  max-width:450px;
+
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(18px);
+
+  padding:30px;
+  border-radius:25px;
+
+  text-align:center;
+  color:white;
+
+  box-shadow:0 0 40px rgba(255,0,120,0.9);
+}
+
+/* Title */
+h1{
+  color:#ff8fc7;
+  text-shadow:0 0 15px pink;
+}
+
+/* Text */
+.line{
+  display:none;
+  font-size:19px;
+  line-height:1.6;
+  animation:fade 1.5s;
+}
+
+@keyframes fade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* Button */
+button{
+  border:none;
+  padding:10px 22px;
+  border-radius:25px;
+  margin-top:15px;
+  font-size:16px;
+  cursor:pointer;
+  background:#ff4081;
+  color:white;
+  box-shadow:0 0 12px pink;
+}
+
+/* Footer */
+.footer{
+  margin-top:18px;
+  color:#ffd1dc;
+  font-size:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- Music -->
+<audio id="music" loop autoplay>
+<source src="https://pagalfree.com/musics/128-Tum%20Hi%20Ho%20-%20Aashiqui%202%20128%20Kbps.mp3">
+</audio>
+
+<!-- Card -->
+<div class="card">
+
+<h1>💖 My Promise to You Rohini 💖</h1>
+
+<p class="line" id="l1">
+From the first day I heard your voice…<br>
+My heart chose you ❤️
+</p>
+
+<p class="line" id="l2">
+Even without meeting you…<br>
+You became my world 🌍
+</p>
+
+<p class="line" id="l3">
+02 October 2022…<br>
+My forever began 💞
+</p>
+
+<p class="line" id="l4">
+I promise to respect you,<br>
+care for you,<br>
+and protect you always 💍
+</p>
+
+<p class="line" id="l5">
+I promise to stand with you<br>
+in every happiness and pain 🌸
+</p>
+
+<p class="line" id="l6">
+I promise…<br>
+You will never walk alone 🤝❤️
+</p>
+
+<p class="line" id="l7" style="font-size:22px;color:#ff9acb;">
+I Promise You My Forever 💖
+</p>
+
+<button onclick="nextLine()">Open My Heart 💌</button>
+
+<div class="footer">
+Always Yours ❤️ — Shri 💌
+</div>
+
+</div>
+
+<script>
+
+/* Show Lines One by One */
+let step = 0;
+
+function nextLine(){
+  step++;
+
+  let el = document.getElementById("l"+step);
+  if(el){
+    el.style.display="block";
+  }
+
+  if(step===1){
+    document.getElementById("music").play();
+  }
+}
+
+/* Hearts */
+for(let i=0;i<35;i++){
+  let h=document.createElement("div");
+  h.innerHTML="💗";
+  h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=4+Math.random()*6+"s";
+  document.body.appendChild(h);
+}
+
+</script>
+
+</body>
+</html>
