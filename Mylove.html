@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Love ❤️ Rohini</title>
+
+<style>
+
+/* Body */
+body{
+  margin:0;
+  font-family:Georgia,serif;
+  overflow:hidden;
+}
+
+/* Background */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+  filter:blur(2px) brightness(0.6);
+  z-index:-3;
+}
+
+/* Hearts */
+.heart{
+  position:fixed;
+  color:#ff4d88;
+  font-size:22px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
+/* Center Card */
+.card{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  width:90%;
+  max-width:420px;
+
+  background:rgba(255,255,255,0.22);
+  backdrop-filter:blur(15px);
+
+  padding:25px;
+  border-radius:25px;
+
+  text-align:center;
+  color:white;
+
+  box-shadow:0 0 40px rgba(255,0,120,0.9);
+}
+
+/* Title */
+h1{
+  color:#ff69b4;
+  text-shadow:0 0 15px #ff1493;
+}
+
+/* Button */
+button{
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  margin:8px;
+  font-size:16px;
+  cursor:pointer;
+  background:#ff4081;
+  color:white;
+  box-shadow:0 0 12px pink;
+}
+
+/* Footer */
+.footer{
+  margin-top:15px;
+  color:#ffd1dc;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+
+<h1>💖 My Love Rohini 💖</h1>
+
+<p>
+You are not just my love…<br>
+You are my happiness 😍❤️
+</p>
+
+<p>
+You are my peace…<br>
+My smile…<br>
+My dream 🌸
+</p>
+
+<p>
+From 02 October 2022,<br>
+My heart chose you forever 💞
+</p>
+
+<p>
+No distance…<br>
+No time…<br>
+Can change my love for you 💍
+</p>
+
+<p>
+Every beat of my heart says only one name…<br>
+Rohini ❤️
+</p>
+
+<h3>You Are My Forever 💖</h3>
+
+<button onclick="play()">▶️ Play Song 🎵</button>
+
+<button onclick="reply()">Reply 💬</button>
+
+<div class="footer">
+Forever Yours ❤️<br>
+— Shri 💌
+</div>
+
+</div>
+
+<!-- Music -->
+<audio id="music" loop>
+  <source src="https://pagalfree.com/musics/128-Tum%20Hi%20Ho%20-%20Aashiqui%202%20128%20Kbps.mp3">
+</audio>
+
+<script>
+
+/* Hearts */
+for(let i=0;i<30;i++){
+ let h=document.createElement("div");
+ h.innerHTML="💗";
+ h.className="heart";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=3+Math.random()*5+"s";
+ document.body.appendChild(h);
+}
+
+/* Play Music */
+function play(){
+ document.getElementById("music").play();
+}
+
+/* WhatsApp Reply */
+function reply(){
+
+ let msg="Shri ❤️ You are my love forever 💖😘";
+
+ window.open(
+  "https://wa.me/?text="+encodeURIComponent(msg),
+  "_blank"
+ );
+
+}
+
+</script>
+
+</body>
+</html>
