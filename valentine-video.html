@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Movie for Rohini ❤️</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:Georgia,serif;
+  overflow:hidden;
+  background:black;
+  color:white;
+}
+
+/* Background */
+#bg{
+  position:fixed;
+  inset:0;
+  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+  filter:brightness(0.5);
+  z-index:-2;
+  animation:zoom 25s infinite alternate;
+}
+
+@keyframes zoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.1);}
+}
+
+/* Screen */
+#screen{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:90%;
+  max-width:500px;
+  min-height:300px;
+
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(15px);
+
+  border-radius:25px;
+  padding:25px;
+  text-align:center;
+
+  box-shadow:0 0 40px pink;
+}
+
+/* Text */
+#text{
+  font-size:20px;
+  line-height:1.6;
+  min-height:150px;
+}
+
+/* Button */
+button{
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  background:#ff4081;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 12px pink;
+}
+
+/* Hearts */
+.heart{
+  position:fixed;
+  font-size:22px;
+  color:#ff5fa2;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div id="bg"></div>
+
+<!-- Music -->
+<audio id="music" loop>
+  <source src="https://pagalfree.com/musics/128-Apna%20Bana%20Le%20-%20Bhediya%20128%20Kbps.mp3">
+</audio>
+
+<!-- Video Screen -->
+<div id="screen">
+
+<h2>💖 Valentine Movie 💖</h2>
+
+<div id="text">
+Tap Start to watch our story 🎬❤️
+</div>
+
+<button onclick="startMovie()">▶ Start Movie</button>
+
+<p style="margin-top:15px;color:#ffd1dc">
+— Shri 💌
+</p>
+
+</div>
+
+<script>
+
+/* Movie Scenes */
+const scenes = [
+
+"Rohini ❤️\n\nFrom the first day I heard your voice,\nmy heart chose you 💖",
+
+"02 October 2022…\n\nThe most beautiful day of my life 💞",
+
+"Your smile is my sunshine ☀️\nYour voice is my music 🎵",
+
+"I don’t need perfect days…\nI just need YOU 💍",
+
+"No matter the distance,\nmy love will never change ❤️",
+
+"You are my today…\nMy tomorrow…\nMy forever 💝",
+
+"Happy Valentine’s Day My Love 😘❤️\n\nForever Yours — Shri 💖"
+
+];
+
+let index = 0;
+
+/* Start Movie */
+function startMovie(){
+
+  document.getElementById("music").play();
+
+  index = 0;
+  showScene();
+
+}
+
+/* Show Scene */
+function showScene(){
+
+  if(index < scenes.length){
+
+    document.getElementById("text").innerText =
+      scenes[index];
+
+    index++;
+
+    setTimeout(showScene, 4000);
+
+  }
+
+}
+
+/* Heart Rain */
+for(let i=0;i<35;i++){
+
+  let h=document.createElement("div");
+  h.innerHTML="💗";
+  h.className="heart";
+
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=3+Math.random()*6+"s";
+
+  document.body.appendChild(h);
+}
+
+</script>
+
+</body>
+</html>
