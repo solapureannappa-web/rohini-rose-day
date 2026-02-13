@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kiss Day for Rohini ❤️</title>
+
+<style>
+
+/* Body */
+body{
+  margin:0;
+  font-family:Georgia,serif;
+  overflow:hidden;
+}
+
+/* Background */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+  filter:blur(2px) brightness(0.6);
+  z-index:-3;
+}
+
+/* Hearts */
+.heart{
+  position:fixed;
+  color:#ff4d88;
+  font-size:22px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
+/* Kiss animation */
+.kiss{
+  position:fixed;
+  bottom:-40px;
+  font-size:30px;
+  animation:kissUp linear infinite;
+}
+
+@keyframes kissUp{
+  to{transform:translateY(-110vh);}
+}
+
+/* Center Card */
+.card{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  width:90%;
+  max-width:420px;
+
+  background:rgba(255,255,255,0.22);
+  backdrop-filter:blur(15px);
+
+  padding:25px;
+  border-radius:25px;
+
+  text-align:center;
+  color:white;
+
+  box-shadow:0 0 40px rgba(255,0,120,0.9);
+}
+
+/* Title */
+h1{
+  color:#ff7abf;
+  text-shadow:0 0 15px pink;
+}
+
+/* Button */
+button{
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  margin:8px;
+  font-size:16px;
+  cursor:pointer;
+  background:#ff4081;
+  color:white;
+  box-shadow:0 0 12px pink;
+}
+
+/* Footer */
+.footer{
+  margin-top:15px;
+  color:#ffd1dc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="bg"></div>
+
+<!-- Main Card -->
+<div class="card">
+
+<h1>💋 Happy Kiss Day Rohini ❤️</h1>
+
+<p>
+If I was with you today,<br>
+I would steal the sweetest kiss 😘💖
+</p>
+
+<p>
+A kiss from you is my favorite magic,<br>
+it makes my whole world beautiful 😍✨
+</p>
+
+<p>
+Even from far away,<br>
+my lips only want your name 💞
+</p>
+
+<p>
+From 02 October 2022 till forever,<br>
+every kiss belongs to you ❤️💍
+</p>
+
+<p>
+Close your eyes for a moment…<br>
+and feel my kiss on your forehead 😚💗
+</p>
+
+<h3>You Are My Sweetest Love 💕</h3>
+
+<button onclick="play()">▶️ Play Song 🎵</button>
+
+<button onclick="reply()">Reply 💬</button>
+
+<div class="footer">
+Always Yours ❤️<br>
+— Shri 💌
+</div>
+
+</div>
+
+<!-- New Romantic Hindi Song -->
+<audio id="music" loop>
+  <source src="https://pagalfree.com/musics/128-Raabta%20-%20Agent%20Vinod%20128%20Kbps.mp3">
+</audio>
+
+<script>
+
+/* Heart Rain */
+for(let i=0;i<25;i++){
+ let h=document.createElement("div");
+ h.innerHTML="💗";
+ h.className="heart";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=3+Math.random()*5+"s";
+ document.body.appendChild(h);
+}
+
+/* Kiss Emojis Floating */
+for(let i=0;i<12;i++){
+ let t=document.createElement("div");
+ t.innerHTML="💋";
+ t.className="kiss";
+ t.style.left=Math.random()*100+"vw";
+ t.style.animationDuration=6+Math.random()*6+"s";
+ document.body.appendChild(t);
+}
+
+/* Play Music */
+function play(){
+ document.getElementById("music").play();
+}
+
+/* WhatsApp Reply */
+function reply(){
+
+ let msg="Happy Kiss Day Shri 😘❤️ I Love You So Much 💖";
+
+ window.open(
+  "https://wa.me/?text="+encodeURIComponent(msg),
+  "_blank"
+ );
+
+}
+
+</script>
+
+</body>
+</html>
