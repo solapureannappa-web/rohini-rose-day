@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine for Rohini ❤️</title>
+
+<style>
+
+/* Body */
+body{
+  margin:0;
+  font-family:Georgia,serif;
+  overflow:hidden;
+  background:black;
+}
+
+/* Background */
+.bg{
+  position:fixed;
+  inset:0;
+  background:url("IMG-20250923-WA0010.jpg") center/cover no-repeat;
+  filter:blur(2px) brightness(0.5);
+  z-index:-3;
+}
+
+/* Overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  z-index:-2;
+}
+
+/* Center Card */
+.card{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  width:90%;
+  max-width:450px;
+
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(18px);
+
+  padding:30px;
+  border-radius:25px;
+
+  text-align:center;
+  color:white;
+
+  box-shadow:0 0 45px rgba(255,0,120,0.9);
+}
+
+/* Title */
+h1{
+  color:#ff8fc7;
+  text-shadow:0 0 18px pink;
+}
+
+/* Message */
+#message{
+  font-size:18px;
+  line-height:1.6;
+  min-height:180px;
+  margin:15px 0;
+}
+
+/* Button */
+button{
+  border:none;
+  padding:10px 22px;
+  border-radius:25px;
+  margin:8px;
+  font-size:16px;
+  cursor:pointer;
+
+  background:#ff4081;
+  color:white;
+  box-shadow:0 0 12px pink;
+}
+
+/* Footer */
+.footer{
+  margin-top:15px;
+  color:#ffd1dc;
+}
+
+/* Hearts */
+.heart{
+  position:fixed;
+  color:#ff5fa2;
+  font-size:22px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
+/* Roses */
+.rose{
+  position:fixed;
+  color:red;
+  font-size:24px;
+  animation:fall linear infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- Music (New Romantic Song) -->
+<audio id="music" loop>
+  <source src="https://pagalfree.com/musics/128-Apna%20Bana%20Le%20-%20Bhediya%20128%20Kbps.mp3">
+</audio>
+
+<div class="card">
+
+<h1>💖 Happy Valentine’s Day Rohini 💖</h1>
+
+<div id="message"></div>
+
+<button onclick="startLove()">💌 Open My Heart</button>
+
+<button onclick="reply()">Reply 💬</button>
+
+<div class="footer">
+Forever Yours ❤️<br>
+— Shri 💍
+</div>
+
+</div>
+
+<script>
+
+/* Love Message */
+const text = `
+Rohini ❤️
+
+From the day you came into my life,
+everything became beautiful 💖
+
+Your voice is my favorite music 🎵
+Your smile is my favorite view 😍
+
+02 October 2022…
+The day my heart chose you 💞
+
+I don’t need perfect days,
+I just need YOU in my life 💍
+
+No matter where life takes us,
+I will always hold your hand 🤝❤️
+
+You are my today,
+my tomorrow,
+my forever…
+
+Happy Valentine’s Day My Love 💝
+`;
+
+let i = 0;
+
+/* Start Animation */
+function startLove(){
+
+  document.getElementById("music").play();
+
+  document.getElementById("message").innerHTML="";
+
+  i = 0;
+  typeWriter();
+
+}
+
+/* Typewriter Effect */
+function typeWriter(){
+
+  if(i < text.length){
+
+    document.getElementById("message").innerHTML +=
+      text.charAt(i);
+
+    i++;
+
+    setTimeout(typeWriter,40);
+  }
+
+}
+
+/* Hearts */
+for(let i=0;i<30;i++){
+
+  let h=document.createElement("div");
+  h.innerHTML="💗";
+  h.className="heart";
+
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=4+Math.random()*6+"s";
+
+  document.body.appendChild(h);
+}
+
+/* Roses */
+for(let i=0;i<15;i++){
+
+  let r=document.createElement("div");
+  r.innerHTML="🌹";
+  r.className="rose";
+
+  r.style.left=Math.random()*100+"vw";
+  r.style.animationDuration=5+Math.random()*7+"s";
+
+  document.body.appendChild(r);
+}
+
+/* WhatsApp Reply */
+function reply(){
+
+ let msg="Happy Valentine’s Day Shri ❤️💖 You are my forever 💍😘";
+
+ window.open(
+  "https://wa.me/?text="+encodeURIComponent(msg),
+  "_blank"
+ );
+
+}
+
+</script>
+
+</body>
+</html>
